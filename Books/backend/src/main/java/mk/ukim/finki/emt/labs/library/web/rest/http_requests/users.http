@@ -1,0 +1,40 @@
+### findAll()
+
+GET http://localhost:9094/api/users
+
+### findById(id)
+
+GET localhost:9094/api/users/6
+
+### add(user)
+POST localhost:9094/api/users/add
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "User: 10 - new",
+  "surname": "User: 1",
+  "username": "user1",
+  "email": "user.1@emt.finki.ukim.mk",
+  "password": "$2a$10$9z4hK2oocDfUI53wq/uGWeJZ7J9cUz/nc5QUuiIwCHw7hxNK2D8YO",
+  "role": "USER"
+}
+
+### edit(id, user)
+
+PUT localhost:9094/api/users/6/edit
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "User: 1 - edited",
+  "surname": "User: 1",
+  "username": "user1",
+  "email": "user.1@emt.finki.ukim.mk",
+  "password": "$2a$10$9z4hK2oocDfUI53wq/uGWeJZ7J9cUz/nc5QUuiIwCHw7hxNK2D8YO",
+  "role": "USER"
+}
+
+### delete(id)
+
+DELETE localhost:9094/api/users/7/delete

@@ -1,0 +1,42 @@
+### findAll()
+
+GET http://localhost:9094/api/authors
+
+### findById(id)
+
+GET localhost:9094/api/authors/13
+
+### add(author)
+POST localhost:9094/api/authors/add
+Content-Type: application/json
+
+{
+  "id": 17,
+  "name": "Author Name: 17 - new",
+  "surname": "Author Surname: 5",
+  "country": {
+    "id": 8,
+    "name": "Country: 3",
+    "continent": "Europe"
+  }
+}
+
+### edit(id, author)
+
+PUT localhost:9094/api/authors/11/edit
+Content-Type: application/json
+
+{
+  "id": 13,
+  "name": "Author Name: 13 - edited",
+  "surname": "Author Surname: 5",
+  "country": {
+    "id": 8,
+    "name": "Country: 3",
+    "continent": "Europe"
+  }
+}
+
+### delete(id)
+
+DELETE localhost:9094/api/authors/15/delete

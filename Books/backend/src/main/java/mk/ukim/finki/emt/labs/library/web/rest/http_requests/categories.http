@@ -1,0 +1,4 @@
+
+### findAll()
+
+GET http://localhost:9094/api/categories
