@@ -12,7 +12,7 @@ public class LibraryApplication {
     public static void main(String[] args) {
         SpringApplication.run(LibraryApplication.class, args);
     }
-    //comment updated
+    //comment updated 2
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(10);
