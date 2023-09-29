@@ -1,0 +1,48 @@
+### findAll()
+
+GET http://localhost:9094/api/books
+
+### findById(id)
+
+GET localhost:9094/api/books/23
+
+### add(book)
+POST localhost:9094/api/books/add
+Content-Type: application/json
+
+{
+  "id": 15,
+  "name": "Book: 99 - new added",
+  "category": "CLASSICS",
+  "author": {
+    "id": 11,
+    "name": "Author Name: 1",
+    "surname": "Author Surname: 1",
+    "country": {
+      "id": 8,
+      "name": "Country: 3",
+      "continent": "Europe"
+    }
+  },
+  "availableCopies": 5
+}
+
+### edit(id, book)
+
+PUT localhost:9094/api/books/23/edit
+Content-Type: application/json
+
+{
+  "name": "Book: 23 - edited",
+  "category": "CLASSICS",
+  "author": 11,
+  "availableCopies": 5
+}
+
+### delete(id)
+
+DELETE localhost:9094/api/books/20/delete
+
+### rent(id)
+
+PUT localhost:9094/api/books/26/rent

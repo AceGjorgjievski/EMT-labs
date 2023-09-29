@@ -1,0 +1,30 @@
+### findAll()
+
+GET http://localhost:9094/api/countries
+
+### findById(id)
+
+GET localhost:9094/api/countries/24
+
+### add(country)
+POST localhost:9094/api/countries/add
+Content-Type: application/json
+
+{
+  "name": "Macedonia",
+  "continent": "Europe"
+}
+
+### edit(id, country)
+
+PUT localhost:9094/api/countries/6/edit
+Content-Type: application/json
+
+{
+  "name": "Western Australia",
+  "continent" : "Australia"
+}
+
+### delete(id)
+
+DELETE localhost:9094/api/countries/8/delete
