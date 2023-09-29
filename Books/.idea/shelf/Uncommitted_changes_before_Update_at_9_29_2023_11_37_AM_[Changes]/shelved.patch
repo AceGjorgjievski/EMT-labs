@@ -1,0 +1,260 @@
+Index: backend/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>2.7.5</version>\r\n        <relativePath/> <!-- lookup parent from repository -->\r\n    </parent>\r\n    <groupId>mk.ukim.finki.emt.labs</groupId>\r\n    <artifactId>library</artifactId>\r\n    <version>0.0.1-SNAPSHOT</version>\r\n    <name>library</name>\r\n    <description>library</description>\r\n    <properties>\r\n        <java.version>17</java.version>\r\n    </properties>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-thymeleaf</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n\r\n\r\n        <!--        jpa-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-data-jpa</artifactId>\r\n            <!--            <version>3.0.4</version>-->\r\n        </dependency>\r\n        <!--        jpa-->\r\n\r\n\r\n        <!--        security-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-security</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.thymeleaf.extras</groupId>\r\n            <artifactId>thymeleaf-extras-springsecurity5</artifactId>\r\n        </dependency>\r\n        <!--        security-->\r\n\r\n        <!--        postgres-->\r\n        <dependency>\r\n            <groupId>com.h2database</groupId>\r\n            <artifactId>h2</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.postgresql</groupId>\r\n            <artifactId>postgresql</artifactId>\r\n        </dependency>\r\n\r\n        <!--        postgres-->\r\n\r\n\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-test</artifactId>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\r\n\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.springframework.boot</groupId>\r\n                <artifactId>spring-boot-maven-plugin</artifactId>\r\n                <configuration>\r\n                    <excludes>\r\n                        <exclude>\r\n                            <groupId>org.projectlombok</groupId>\r\n                            <artifactId>lombok</artifactId>\r\n                        </exclude>\r\n                    </excludes>\r\n                </configuration>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/pom.xml b/backend/pom.xml
+--- a/backend/pom.xml	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/backend/pom.xml	(date 1695972113141)
+@@ -8,72 +8,57 @@
+         <version>2.7.5</version>
+         <relativePath/> <!-- lookup parent from repository -->
+     </parent>
+-    <groupId>mk.ukim.finki.emt.labs</groupId>
+-    <artifactId>library</artifactId>
++    <groupId>finki.emt</groupId>
++    <artifactId>BookRent</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+-    <name>library</name>
+-    <description>library</description>
++    <name>BookRent</name>
++    <description>Demo project for Spring Boot</description>
+     <properties>
+         <java.version>17</java.version>
+     </properties>
+     <dependencies>
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-web</artifactId>
+-        </dependency>
+-
+-
+-        <!--        jpa-->
+-        <dependency>
+-            <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-data-jpa</artifactId>
+-            <!--            <version>3.0.4</version>-->
+         </dependency>
+-        <!--        jpa-->
+-
+-
+-        <!--        security-->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-security</artifactId>
++            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+         </dependency>
+-
+         <dependency>
+-            <groupId>org.thymeleaf.extras</groupId>
+-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-web</artifactId>
+         </dependency>
+-        <!--        security-->
+-
+-        <!--        postgres-->
+         <dependency>
+             <groupId>com.h2database</groupId>
+             <artifactId>h2</artifactId>
++            <scope>runtime</scope>
+         </dependency>
+-
+         <dependency>
+             <groupId>org.postgresql</groupId>
+             <artifactId>postgresql</artifactId>
++            <scope>runtime</scope>
+         </dependency>
+-
+-        <!--        postgres-->
+-
+-
+         <dependency>
+             <groupId>org.projectlombok</groupId>
+             <artifactId>lombok</artifactId>
+             <optional>true</optional>
+         </dependency>
++
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-security</artifactId>
++        </dependency>
++
++        <dependency>
++            <groupId>org.thymeleaf.extras</groupId>
++            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
++        </dependency>
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-test</artifactId>
+             <scope>test</scope>
+         </dependency>
+-
+-
+     </dependencies>
+ 
+     <build>
+@@ -81,6 +66,7 @@
+             <plugin>
+                 <groupId>org.springframework.boot</groupId>
+                 <artifactId>spring-boot-maven-plugin</artifactId>
++                <version>2.7.0</version>
+                 <configuration>
+                     <excludes>
+                         <exclude>
+@@ -93,4 +79,4 @@
+         </plugins>
+     </build>
+ 
+-</project>
++</project>
+\ No newline at end of file
+Index: backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Country.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.emt.labs.library.model;\r\n\r\n\r\n\r\nimport lombok.Data;\r\n\r\nimport javax.persistence.Entity;\r\nimport javax.persistence.GeneratedValue;\r\nimport javax.persistence.GenerationType;\r\nimport javax.persistence.Id;\r\n\r\n@Entity\r\n@Data\r\npublic class Country {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Long id;\r\n\r\n    private String name;\r\n\r\n    private String continent;\r\n\r\n    public Country() {\r\n    }\r\n\r\n    public Country(String name, String continent) {\r\n        this.name = name;\r\n        this.continent = continent;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Country.java b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Country.java
+--- a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Country.java	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Country.java	(date 1695888898285)
+@@ -2,12 +2,9 @@
+ 
+ 
+ 
++import jakarta.persistence.*;
+ import lombok.Data;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Id;
+ 
+ @Entity
+ @Data
+Index: ../.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../.idea/.gitignore b/../.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1682764563565)
++++ b/../.idea/.gitignore	(date 1682764563565)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: frontend/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/.idea/vcs.xml b/frontend/.idea/vcs.xml
+--- a/frontend/.idea/vcs.xml	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/frontend/.idea/vcs.xml	(date 1695720340648)
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Book.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.emt.labs.library.model;\r\n\r\n\r\nimport lombok.Data;\r\nimport mk.ukim.finki.emt.labs.library.model.enums.Category;\r\nimport org.hibernate.annotations.OnDelete;\r\nimport org.hibernate.annotations.OnDeleteAction;\r\n\r\nimport javax.persistence.*;\r\n\r\n@Entity\r\n@Data\r\npublic class Book {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Long id;\r\n\r\n    private String name;\r\n\r\n    @Enumerated(EnumType.STRING)\r\n    private Category category;\r\n\r\n    @ManyToOne(fetch = FetchType.EAGER)\r\n    @OnDelete(action = OnDeleteAction.CASCADE)\r\n    private Author author;\r\n\r\n    private Integer availableCopies;\r\n\r\n    private boolean isRented;\r\n\r\n\r\n    public Book() {\r\n        this.isRented = false;\r\n    }\r\n\r\n    public Book(String name, Category category, Author author, Integer availableCopies) {\r\n        this.name = name;\r\n        this.category = category;\r\n        this.author = author;\r\n        this.availableCopies = availableCopies;\r\n        this.isRented = false;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Book.java b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Book.java
+--- a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Book.java	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Book.java	(date 1695972225178)
+@@ -8,6 +8,7 @@
+ 
+ import javax.persistence.*;
+ 
++
+ @Entity
+ @Data
+ public class Book {
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$/frontend\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/.idea/vcs.xml	(date 1695980249859)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/frontend" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Author.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.emt.labs.library.model;\r\n\r\n\r\nimport lombok.Data;\r\nimport org.hibernate.annotations.OnDelete;\r\nimport org.hibernate.annotations.OnDeleteAction;\r\n\r\nimport javax.persistence.*;\r\n\r\n@Entity\r\n@Data\r\npublic class Author {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Long id;\r\n\r\n    private String name;\r\n\r\n    private String surname;\r\n\r\n    @ManyToOne(fetch = FetchType.EAGER)\r\n    @OnDelete(action = OnDeleteAction.CASCADE)\r\n    private Country country;\r\n\r\n    public Author() {\r\n    }\r\n\r\n    public Author(String name, String surname, Country country) {\r\n        this.name = name;\r\n        this.surname = surname;\r\n        this.country = country;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Author.java b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Author.java
+--- a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Author.java	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/Author.java	(date 1695888898241)
+@@ -1,11 +1,11 @@
+ package mk.ukim.finki.emt.labs.library.model;
+ 
+ 
++import jakarta.persistence.*;
+ import lombok.Data;
+ import org.hibernate.annotations.OnDelete;
+ import org.hibernate.annotations.OnDeleteAction;
+ 
+-import javax.persistence.*;
+ 
+ @Entity
+ @Data
+Index: backend/src/main/java/mk/ukim/finki/emt/labs/library/model/dto/BookDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.emt.labs.library.model.dto;\r\n\r\nimport lombok.Data;\r\nimport mk.ukim.finki.emt.labs.library.model.enums.Category;\r\n\r\nimport javax.persistence.EnumType;\r\nimport javax.persistence.Enumerated;\r\n\r\n@Data\r\npublic class BookDto {\r\n\r\n    private String name;\r\n\r\n    @Enumerated(EnumType.STRING)\r\n    private Category category;\r\n\r\n    private Long author;\r\n\r\n    private Integer availableCopies;\r\n\r\n    public BookDto(String name, Category category, Long author, Integer availableCopies) {\r\n        this.name = name;\r\n        this.category = category;\r\n        this.author = author;\r\n        this.availableCopies = availableCopies;\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/dto/BookDto.java b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/dto/BookDto.java
+--- a/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/dto/BookDto.java	(revision a6d6f203b55b976bd41756b2c25eaad22c79e1dd)
++++ b/backend/src/main/java/mk/ukim/finki/emt/labs/library/model/dto/BookDto.java	(date 1695972225170)
+@@ -1,10 +1,10 @@
+ package mk.ukim.finki.emt.labs.library.model.dto;
+ 
++import javax.persistence.*;
++
+ import lombok.Data;
+ import mk.ukim.finki.emt.labs.library.model.enums.Category;
+ 
+-import javax.persistence.EnumType;
+-import javax.persistence.Enumerated;
+ 
+ @Data
+ public class BookDto {
