@@ -1,6 +1,12 @@
 THE AMAZON WAY -- 
 GREAT MAN--
 
+====================<br>
+za da se napravi react app vo spring project, treba od file
+explorer da se napravi nov folder(backend) i vo nego drag & drop na spring boot app
+
+====================
+
 BAU - https://accelerator.ukim.mk
 ================
 1 kol
